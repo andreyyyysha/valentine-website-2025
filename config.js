@@ -5,7 +5,8 @@
 const CONFIG = {
     // Your Valentine's name that will appear in the title
     // Example: "Jade", "Sarah", "Mike"
-    valentineTitle: "yasha...",  // instead of "yasha, my love..."
+    valentineName: "yasha",
+    
 
     // The title that appears in the browser tab
     // You can use emojis! 💝 💖 💗 💓 💞 💕
@@ -15,7 +16,8 @@ const CONFIG = {
     // Find more emojis at: https://emojipedia.org
     floatingEmojis: {
         hearts: ['❤️', '💖', '💝', '💗', '💓'],  // Heart emojis
-        bears: ['🧸', '🐻']                       // Cute bear emojis
+        bears: ['🧸', '🐻']       
+        // Cute bear emojis
     },
 
     // Questions and answers
@@ -87,3 +89,8 @@ const CONFIG = {
 
 // Don't modify anything below this line unless you know what you're doing
 window.VALENTINE_CONFIG = CONFIG; 
+
+// 💔 Remove the "my love..." text automatically
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.innerHTML = document.body.innerHTML.replace(/,\s*my love\.\.\./gi, "...");
+});
